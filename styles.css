@@ -169,14 +169,271 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
 .industry-grid h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -.025em; }
 .industry-grid p { margin: 0; color: var(--slate); font-size: 14px; line-height: 1.5; }
 
-.testimonial-section { padding: 96px 0; color: var(--white); background: var(--navy-deep); }
-.testimonial-layout { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 90px; }
-.testimonial-layout h2 { margin: 0; font-size: clamp(38px, 4vw, 58px); }
-.testimonial-card { margin: 0; padding: 36px 39px; background: rgba(255,255,255,.07); border-left: 3px solid var(--aqua); }
-.stars { margin-bottom: 20px; color: var(--aqua); font-size: 16px; letter-spacing: .15em; }
-blockquote { margin: 0 0 25px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(21px, 2vw, 27px); line-height: 1.38; }
-figcaption { display: flex; flex-direction: column; gap: 2px; color: #b4dce2; font-size: 13px; }
-figcaption strong { color: var(--white); }
+/* ========================================
+   GOOGLE REVIEWS
+======================================== */
+
+.testimonial-section {
+  padding: 96px 0;
+  color: var(--white);
+  background: var(--navy-deep);
+}
+
+.testimonial-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.testimonial-intro h2 {
+  margin: 0;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.05;
+}
+
+.testimonial-subtitle {
+  max-width: 400px;
+  margin: 24px 0 0;
+  color: #b4dce2;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   REVIEW CAROUSEL
+======================================== */
+
+.testimonial-carousel {
+  position: relative;
+}
+
+
+/* ========================================
+   REVIEW CARD
+======================================== */
+
+.testimonial-card {
+  height: 390px;
+  min-height: 390px;
+  max-height: 390px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 38px 40px;
+
+  background: rgba(255, 255, 255, 0.07);
+  border-left: 3px solid var(--aqua);
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+
+/* Fade transition */
+
+.testimonial-card.is-changing {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+
+/* ========================================
+   STAR RATING
+======================================== */
+
+.testimonial-rating {
+  flex-shrink: 0;
+
+  margin-bottom: 22px;
+
+  color: var(--aqua);
+  font-size: 18px;
+  line-height: 1;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   REVIEW TEXT
+======================================== */
+
+.testimonial-card blockquote {
+  /*
+   * flex: 1 gives the review a fixed amount
+   * of space inside the fixed-height card.
+   *
+   * This is important because JavaScript uses
+   * this area to calculate whether the text
+   * needs to shrink.
+   */
+
+  flex: 1;
+  min-height: 0;
+
+  margin: 0 0 28px;
+
+  color: var(--white);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 24px;
+  line-height: 1.45;
+
+  overflow: hidden;
+
+  /*
+   * Smooth font-size changes.
+   */
+
+  transition: font-size 0.2s ease;
+}
+
+
+/* ========================================
+   REVIEW AUTHOR
+======================================== */
+
+.testimonial-author {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  color: #b4dce2;
+  font-size: 13px;
+}
+
+.testimonial-author strong {
+  color: var(--white);
+  font-size: 14px;
+}
+
+
+/* ========================================
+   CONTROLS
+======================================== */
+
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 25px;
+}
+
+
+/* ========================================
+   ARROWS
+======================================== */
+
+.testimonial-arrow {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--white);
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.testimonial-arrow:hover,
+.testimonial-arrow:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--aqua);
+  outline: none;
+}
+
+
+/* ========================================
+   DOTS
+======================================== */
+
+.testimonial-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.testimonial-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.testimonial-dot.is-active {
+  background: var(--aqua);
+  transform: scale(1.35);
+}
+
+.testimonial-dot:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   GOOGLE LINK
+======================================== */
+
+.google-reviews-link {
+  display: block;
+
+  width: fit-content;
+
+  margin: 20px auto 0;
+
+  color: #b4dce2;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.google-reviews-link:hover,
+.google-reviews-link:focus-visible {
+  color: var(--white);
+  text-decoration: underline;
+}
 
 .quote-section { padding: 112px 0; background: #f6fafb; }
 .quote-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; align-items: center; }
@@ -252,7 +509,12 @@ figcaption strong { color: var(--white); }
   .industry-grid svg { margin-bottom: 18px; }
   .testimonial-section { padding: 70px 0; }
   .testimonial-layout { gap: 30px; }
-  .testimonial-card { padding: 28px 24px; }
+  .testimonial-card {
+    height: 400px;
+    min-height: 400px;
+    max-height: 400px;
+    padding: 28px 24px;
+  }
   .quote-layout { gap: 36px; }
   .quote-form { padding: 25px 20px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }

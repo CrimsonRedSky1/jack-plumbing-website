@@ -273,15 +273,71 @@
 
       <section class="testimonial-section" aria-labelledby="testimonial-title">
         <div class="container testimonial-layout">
-          <div>
-            <p class="eyebrow eyebrow-light">Trusted service</p>
-            <h2 id="testimonial-title">Professional,<br />clear and tidy.</h2>
+
+          <div class="testimonial-intro">
+            <p class="eyebrow eyebrow-light">Google reviews</p>
+            <h2 id="testimonial-title">Trusted by<br />our customers.</h2>
+            <p class="testimonial-subtitle">
+              See what customers across Singapore have to say about TNE Plumbing.
+            </p>
           </div>
-          <figure class="testimonial-card">
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>“Jack explained the job and pricing clearly, completed the work efficiently and cleaned up after. Great workmanship and fair pricing.”</blockquote>
-            <figcaption><strong>Kenneth K.</strong><span>Google review</span></figcaption>
-          </figure>
+
+          <div class="testimonial-carousel" aria-live="polite">
+
+            <article class="testimonial-card" id="testimonial-card">
+
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+
+              <blockquote id="testimonial-text"></blockquote>
+
+              <div class="testimonial-author">
+                <strong id="testimonial-author"></strong>
+                <span>Google review</span>
+              </div>
+
+            </article>
+
+            <div class="testimonial-controls">
+
+              <button
+                class="testimonial-arrow"
+                id="testimonial-prev"
+                type="button"
+                aria-label="Previous review"
+              >
+                ←
+              </button>
+
+              <div
+                class="testimonial-dots"
+                id="testimonial-dots"
+                aria-label="Review selection"
+              ></div>
+
+              <button
+                class="testimonial-arrow"
+                id="testimonial-next"
+                type="button"
+                aria-label="Next review"
+              >
+                →
+              </button>
+
+            </div>
+
+            <a
+              class="google-reviews-link"
+              href="https://www.google.com/maps/place/Thong+Nian+Engineering+Pte+Ltd/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View all reviews on Google →
+            </a>
+
+          </div>
+
         </div>
       </section>
 
