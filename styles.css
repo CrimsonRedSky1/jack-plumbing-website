@@ -55,7 +55,7 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
 
 .hero { position: relative; min-height: 658px; isolation: isolate; color: var(--white); overflow: hidden; }
 .hero-image, .hero-overlay { position: absolute; inset: 0; }
-.hero-image { z-index: -2; background: url("assets/jetting-hero.jpg") center / cover no-repeat; transform: scale(1.02); }
+.hero-image { z-index: -2; background: url("assets/jetting-hero.jpeg") center / cover no-repeat; transform: scale(1.02); }
 .hero-overlay { z-index: -1; background: linear-gradient(90deg, rgba(2,24,39,.94) 0%, rgba(3,33,52,.73) 43%, rgba(3,33,52,.19) 100%); }
 .hero-content { display: flex; flex-direction: column; justify-content: center; min-height: 658px; padding: 84px 0 72px; }
 .hero-copy { max-width: 540px; margin-bottom: 34px; color: #e0f5f7; font-size: 20px; line-height: 1.5; }
