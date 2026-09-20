@@ -682,3 +682,51 @@ showReview(
 startRotation();
 
 }
+
+/* Native touch/trackpad scrolling with button and keyboard navigation. */
+const serviceCarousel = document.querySelector("[data-service-carousel]");
+if (serviceCarousel) {
+  const cards = Array.from(serviceCarousel.querySelectorAll(".service-card"));
+  const controls = document.querySelector("[data-service-controls]");
+  const previous = document.querySelector("[data-service-prev]");
+  const next = document.querySelector("[data-service-next]");
+  const status = document.querySelector("[data-service-status]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const metrics = () => {
+    const gap = parseFloat(getComputedStyle(serviceCarousel).columnGap) || 0;
+    const step = cards[0].getBoundingClientRect().width + gap;
+    const visible = Math.max(1, Math.round((serviceCarousel.clientWidth + gap) / step));
+    const index = Math.min(cards.length - visible, Math.max(0, Math.round(serviceCarousel.scrollLeft / step)));
+    return { step, visible, index };
+  };
+  const update = () => {
+    const { visible, index } = metrics();
+    previous.disabled = index === 0;
+    next.disabled = index >= cards.length - visible;
+    status.textContent = visible === 1
+      ? `Service ${index + 1} of ${cards.length}`
+      : `Services ${index + 1}–${Math.min(cards.length, index + visible)} of ${cards.length}`;
+  };
+  const move = (direction) => {
+    const { step, visible, index } = metrics();
+    const target = Math.max(0, Math.min(cards.length - visible, index + direction));
+    serviceCarousel.scrollTo({ left: target * step, behavior: reducedMotion.matches ? "auto" : "smooth" });
+  };
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  serviceCarousel.addEventListener("keydown", (event) => {
+    if (event.target !== serviceCarousel) return;
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+    }
+  });
+  let scrollTimer;
+  serviceCarousel.addEventListener("scroll", () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(update, 120);
+  }, { passive: true });
+  new ResizeObserver(update).observe(serviceCarousel);
+  controls.hidden = false;
+  update();
+}

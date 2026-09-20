@@ -1,3 +1,6 @@
+@font-face { font-family: "Lato"; src: url("assets/fonts/Lato-Regular.ttf") format("truetype"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Lato"; src: url("assets/fonts/Lato-Bold.ttf") format("truetype"); font-style: normal; font-weight: 700; font-display: swap; }
+
 :root {
   --navy: #06263d;
   --navy-deep: #031725;
@@ -14,7 +17,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; color: var(--ink); background: var(--white); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.5; }
+body { margin: 0; min-width: 320px; color: var(--ink); background: var(--white); font-family: "Lato", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.5; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; }
@@ -29,7 +32,7 @@ address { font-style: normal; }
 .eyebrow-light { color: #b9f1f6; }
 .eyebrow-blue { color: var(--blue); }
 h1, h2, h3, p { margin-top: 0; }
-h1, h2, h3 { font-weight: 760; letter-spacing: -.045em; line-height: 1.03; }
+h1, h2, h3 { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 760; letter-spacing: -.045em; line-height: 1.03; }
 h1 { max-width: 680px; margin-bottom: 22px; font-size: clamp(52px, 7.2vw, 96px); }
 h2 { margin-bottom: 20px; font-size: clamp(38px, 4.1vw, 62px); }
 h3 { font-size: 23px; }
@@ -587,4 +590,32 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
   .service-hero .hero-actions { align-items: stretch; }
   .service-hero .button { white-space: normal; }
   .service-faq { padding: 22px; }
+}
+
+
+/* Horizontally scrollable services: three desktop cards, one mobile card. */
+.service-grid {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 36px) / 3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) var(--sky);
+  padding-block: 6px 16px;
+}
+.service-grid .service-card { min-width: 0; scroll-snap-align: start; }
+.service-grid .service-card:hover { transform: none; box-shadow: none; }
+.service-grid:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.service-carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 18px; }
+.service-carousel-controls[hidden] { display: none; }
+.service-carousel-status { margin: 0; color: var(--slate); font-size: 14px; }
+.service-carousel-buttons { display: flex; gap: 10px; }
+.service-carousel-buttons button { width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 50%; color: var(--navy); background: var(--white); font-size: 24px; }
+.service-carousel-buttons button:hover:not(:disabled) { color: var(--white); background: var(--navy); }
+.service-carousel-buttons button:disabled { opacity: .35; cursor: default; }
+.service-carousel-buttons button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+@media (max-width: 720px) {
+  .service-grid { grid-auto-columns: 100%; }
 }
