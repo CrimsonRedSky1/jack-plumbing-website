@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="format-detection" content="telephone=yes" />
     <link rel="canonical" href="https://www.tneplumbing.com/" />
-    <link rel="icon" href="assets/favicon1.png" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon1.png" type="image/png" />
     <title>TNE Plumbing | 24/7 Commercial Plumbing in Singapore</title>
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_SG" />
@@ -27,46 +27,120 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts/main.js" defer></script>
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Plumber",
+      "@id": "https://www.tneplumbing.com/#business",
+      "name": "Thong Nian Engineering Pte Ltd (TNE Plumbing)",
+      "url": "https://www.tneplumbing.com/",
+      "logo": "https://www.tneplumbing.com/assets/tne-logo.jpg",
+      "image": "https://www.tneplumbing.com/assets/jetting-hero.jpeg",
+      "telephone": "+65 6980 8000",
+      "email": "plumbing@thongnian.com",
+      "description": "24/7 commercial plumbing, drain clearing, high-pressure water jetting and preventive maintenance in Singapore.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5053 Ang Mo Kio Industrial Park 2 #01-1103",
+        "addressLocality": "Singapore",
+        "addressCountry": "SG"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "openingHours": "Mo-Su 00:00-23:59",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Commercial plumbing services",
+        "itemListElement": [
           {
-            "@type": "Plumber",
-            "@id": "https://www.tneplumbing.com/#business",
-            "name": "Thong Nian Engineering Pte Ltd (TNE Plumbing)",
-            "url": "https://www.tneplumbing.com/",
-            "logo": "https://www.tneplumbing.com/assets/tne-logo.jpg",
-            "image": "https://www.tneplumbing.com/assets/jetting-hero.jpeg",
-            "telephone": "+65 6980 8000",
-            "email": "plumbing@thongnian.com",
-            "description": "24/7 commercial plumbing, drain clearing, high-pressure water jetting and preventive maintenance in Singapore.",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "5053 Ang Mo Kio Industrial Park 2 #01-1103",
-              "addressLocality": "Singapore",
-              "addressCountry": "SG"
-            },
-            "areaServed": { "@type": "Country", "name": "Singapore" },
-            "openingHours": "Mo-Su 00:00-23:59",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Commercial plumbing services",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "High-pressure water jetting" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drain and choke clearing" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive plumbing maintenance" } }
-              ]
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "High-pressure jet cleaning",
+              "url": "https://www.tneplumbing.com/high-pressure-jet-cleaning-services/"
             }
           },
           {
-            "@type": "WebSite",
-            "@id": "https://www.tneplumbing.com/#website",
-            "url": "https://www.tneplumbing.com/",
-            "name": "TNE Plumbing",
-            "publisher": { "@id": "https://www.tneplumbing.com/#business" }
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plumbing chokes repair",
+              "url": "https://www.tneplumbing.com/plumbing-chokes-repair-services/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sewage cleaning & vacuum truck services",
+              "url": "https://www.tneplumbing.com/sewage-cleaning-vacuum-truck-services/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial drain cleaning",
+              "url": "https://www.tneplumbing.com/commercial-drain-cleaning-singapore/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial plumbing",
+              "url": "https://www.tneplumbing.com/commercial-plumbing-services/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pump system repair",
+              "url": "https://www.tneplumbing.com/pump-system-repair-works/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Water pipe leak repair & repiping",
+              "url": "https://www.tneplumbing.com/water-pipe-leak-repair-repiping/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Bathroom plumbing fixtures installation",
+              "url": "https://www.tneplumbing.com/bathroom-plumbing-fixtures-installation/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "F&B maintenance package",
+              "url": "https://www.tneplumbing.com/restaurant-drain-cleaning-singapore/"
+            }
           }
         ]
       }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.tneplumbing.com/#website",
+      "url": "https://www.tneplumbing.com/",
+      "name": "TNE Plumbing",
+      "publisher": {
+        "@id": "https://www.tneplumbing.com/#business"
+      }
+    }
+  ]
+}
     </script>
   </head>
   <body>
@@ -209,29 +283,62 @@
               <p class="eyebrow">What we solve</p>
               <h2 id="services-title">Practical fixes.<br /><em>Less downtime.</em></h2>
             </div>
-            <p>Specialist plumbing support for busy commercial sites, F&amp;B operations and property teams.</p>
+            <p>Explore our plumbing services for commercial sites, F&amp;B operations and homes. Find the right support for your property.</p>
           </div>
           <div class="service-grid">
             <article class="service-card service-card-featured">
-              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 33c4-9 8-13 16-13s12 4 16 13"/><path d="M5 38h38M24 7v13M15 11l5 9m13-9-5 9"/></svg></div>
-              <p class="service-number">01</p>
-              <h3>High-pressure jetting</h3>
-              <p>Clear tough grease, debris and drain blockages with controlled, pipe-safe jetting.</p>
-              <a href="#quote">Get a jetting quote <span aria-hidden="true">→</span></a>
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 33c4-9 8-13 16-13s12 4 16 13M5 38h38M24 7v13M15 11l5 9m13-9-5 9"/></svg></div>
+              <p class="service-number">01</p><h3>High-pressure jet cleaning</h3>
+              <p>Water jetting for grease, sludge and stubborn build-up inside drainage pipes.</p>
+              <a href="high-pressure-jet-cleaning-services/">Learn more<span class="sr-only"> about high-pressure jet cleaning</span> <span aria-hidden="true">→</span></a>
             </article>
             <article class="service-card">
-              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 28c0-10 8-18 18-18h10v10c0 10-8 18-18 18h-10Z"/><path d="M18 30 31 17"/></svg></div>
-              <p class="service-number">02</p>
-              <h3>Drain &amp; choke clearing</h3>
-              <p>Rapid diagnosis and clearing for drains, floor traps and sewer lines.</p>
-              <a href="#quote">Request assistance <span aria-hidden="true">→</span></a>
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 10h10v18h18v10H20c-6 0-10-4-10-10ZM28 10v10h10"/></svg></div>
+              <p class="service-number">02</p><h3>Plumbing chokes repair</h3>
+              <p>Clearing for blocked toilets, sinks and floor traps, including recurring chokes.</p>
+              <a href="plumbing-chokes-repair-services/">Learn more<span class="sr-only"> about plumbing chokes repair</span> <span aria-hidden="true">→</span></a>
             </article>
             <article class="service-card">
-              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 33h30M13 33V19h22v14M18 19v-5h12v5M20 38h8"/><path d="M24 6v8"/></svg></div>
-              <p class="service-number">03</p>
-              <h3>Preventive maintenance</h3>
-              <p>Keep drains clear with tailored maintenance for F&amp;B and commercial facilities.</p>
-              <a href="#quote">Plan maintenance <span aria-hidden="true">→</span></a>
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 16h24v19H5ZM29 24h8l6 8v3H29M11 35v4m24-4v4"/></svg></div>
+              <p class="service-number">03</p><h3>Sewage cleaning &amp; vacuum truck services</h3>
+              <p>Sewage cleaning and vacuum removal for backed-up wastewater and accumulated waste.</p>
+              <a href="sewage-cleaning-vacuum-truck-services/">Learn more<span class="sr-only"> about sewage cleaning &amp; vacuum truck services</span> <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 12h32v24H8ZM14 18h20M14 24h20M14 30h20"/></svg></div>
+              <p class="service-number">04</p><h3>Commercial drain cleaning</h3>
+              <p>Drainage, grease trap and sump pit cleaning for busy commercial properties.</p>
+              <a href="commercial-drain-cleaning-singapore/">Learn more<span class="sr-only"> about commercial drain cleaning</span> <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 40V8h28v32M17 16h4m6 0h4M17 24h4m6 0h4M20 40V32h8v8"/></svg></div>
+              <p class="service-number">05</p><h3>Commercial plumbing</h3>
+              <p>Repairs, installations and planned plumbing support for commercial premises.</p>
+              <a href="commercial-plumbing-services/">Learn more<span class="sr-only"> about commercial plumbing</span> <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 20h8m16 0h8M16 12h16v24H16ZM24 17v14M8 16v8m32-8v8"/></svg></div>
+              <p class="service-number">06</p><h3>Pump system repair</h3>
+              <p>Assessment, repair and maintenance for water and sewage pump systems.</p>
+              <a href="pump-system-repair-works/">Learn more<span class="sr-only"> about pump system repair</span> <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 12h12v15h22v10H19c-7 0-12-5-12-12ZM30 6c0 0-5 6-5 9a5 5 0 0 0 10 0c0-3-5-9-5-9"/></svg></div>
+              <p class="service-number">07</p><h3>Water pipe leak repair &amp; repiping</h3>
+              <p>Leak repairs and partial or full pipe replacement for homes and businesses.</p>
+              <a href="water-pipe-leak-repair-repiping/">Learn more<span class="sr-only"> about water pipe leak repair &amp; repiping</span> <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 23h34l-4 12H11ZM16 23V11h10v5M15 35v6m18-6v6"/></svg></div>
+              <p class="service-number">08</p><h3>Bathroom plumbing fixtures installation</h3>
+              <p>Installation and replacement of toilet bowls, basins, taps and shower fittings.</p>
+              <a href="bathroom-plumbing-fixtures-installation/">Learn more<span class="sr-only"> about bathroom plumbing fixtures installation</span> <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 12h30v29H9ZM16 7v10m16-10v10M9 22h30M16 31l5 4 10-8"/></svg></div>
+              <p class="service-number">09</p><h3>F&amp;B maintenance package</h3>
+              <p>Planned kitchen drainage and plumbing care for restaurants and F&amp;B outlets.</p>
+              <a href="restaurant-drain-cleaning-singapore/">Learn more<span class="sr-only"> about f&amp;b maintenance package</span> <span aria-hidden="true">→</span></a>
             </article>
           </div>
         </div>
@@ -354,7 +461,7 @@
               <label>Full name<input name="name" autocomplete="name" required maxlength="80" /></label>
               <label>Phone number<input name="phone" type="tel" autocomplete="tel" required inputmode="tel" maxlength="30" /></label>
             </div>
-            <label>What can we help with?<nobr><select name="service" required><option value="">Choose a service</option><option>High-pressure jetting</option><option>Drain / choke clearing</option><option>Pipe leak or repair</option><option>Preventive maintenance</option><option>Other</option></select></nobr></label>
+            <label>What can we help with?<nobr><select name="service" required><option value="">Choose a service</option><option>High-pressure jet cleaning</option><option>Plumbing chokes repair</option><option>Sewage cleaning &amp; vacuum truck services</option><option>Commercial drain cleaning</option><option>Commercial plumbing</option><option>Pump system repair</option><option>Water pipe leak repair &amp; repiping</option><option>Bathroom plumbing fixtures installation</option><option>F&amp;B maintenance package</option><option>Other</option></select></nobr></label>
             <label>Briefly describe the issue<textarea name="message" rows="3" required maxlength="500" placeholder="Location, issue and urgency"></textarea></label>
             <p class="form-error" role="alert" aria-live="polite" data-form-error></p>
             <button class="button button-dark" type="submit">Continue on WhatsApp <span aria-hidden="true">↗</span></button>

@@ -1,6 +1,6 @@
 # TNE Plumbing — website redesign
 
-A responsive, single-page conversion-focused redesign for Thong Nian Engineering / TNE Plumbing.
+A responsive, conversion-focused redesign for Thong Nian Engineering / TNE Plumbing.
 
 ## Open locally
 
@@ -9,6 +9,8 @@ Open `index.html` in a modern browser. No build step or package installation is 
 ## Contents
 
 - `index.html` — semantic page structure and conversion copy
+- Nine service directories — dedicated static pages at the original service URL paths
+- `SERVICE-CONTENT.md` — verified source pages and content decisions
 - `styles.css` — responsive visual system
 - `scripts/main.js` — accessible mobile navigation and privacy-conscious WhatsApp quote flow
 - `assets/` — original logo and selected job imagery from the current client website
