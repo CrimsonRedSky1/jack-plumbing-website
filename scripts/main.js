@@ -683,50 +683,36 @@ startRotation();
 
 }
 
-/* Native touch/trackpad scrolling with button and keyboard navigation. */
-const serviceCarousel = document.querySelector("[data-service-carousel]");
-if (serviceCarousel) {
-  const cards = Array.from(serviceCarousel.querySelectorAll(".service-card"));
-  const controls = document.querySelector("[data-service-controls]");
-  const previous = document.querySelector("[data-service-prev]");
-  const next = document.querySelector("[data-service-next]");
-  const status = document.querySelector("[data-service-status]");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const metrics = () => {
-    const gap = parseFloat(getComputedStyle(serviceCarousel).columnGap) || 0;
-    const step = cards[0].getBoundingClientRect().width + gap;
-    const visible = Math.max(1, Math.round((serviceCarousel.clientWidth + gap) / step));
-    const index = Math.min(cards.length - visible, Math.max(0, Math.round(serviceCarousel.scrollLeft / step)));
-    return { step, visible, index };
+/* One-time entrances; content stays visible if JavaScript or observers are unavailable. */
+(() => {
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  const active = new Map();
+  const reveal = (element, delay = 0) => {
+    if (preference.matches || element.contains(document.activeElement)) return;
+    const animation = element.animate([
+      { opacity: 0, transform: 'translateY(18px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], { duration: 580, delay, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'backwards' });
+    active.set(element, animation);
+    animation.onfinish = animation.oncancel = () => active.delete(element);
   };
-  const update = () => {
-    const { visible, index } = metrics();
-    previous.disabled = index === 0;
-    next.disabled = index >= cards.length - visible;
-    status.textContent = visible === 1
-      ? `Service ${index + 1} of ${cards.length}`
-      : `Services ${index + 1}–${Math.min(cards.length, index + visible)} of ${cards.length}`;
-  };
-  const move = (direction) => {
-    const { step, visible, index } = metrics();
-    const target = Math.max(0, Math.min(cards.length - visible, index + direction));
-    serviceCarousel.scrollTo({ left: target * step, behavior: reducedMotion.matches ? "auto" : "smooth" });
-  };
-  previous.addEventListener("click", () => move(-1));
-  next.addEventListener("click", () => move(1));
-  serviceCarousel.addEventListener("keydown", (event) => {
-    if (event.target !== serviceCarousel) return;
-    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-      event.preventDefault();
-      move(event.key === "ArrowLeft" ? -1 : 1);
-    }
+  document.querySelectorAll('.hero-content, .service-hero-text').forEach(group => {
+    [...group.children].forEach((element, index) => reveal(element, index * 75));
   });
-  let scrollTimer;
-  serviceCarousel.addEventListener("scroll", () => {
-    window.clearTimeout(scrollTimer);
-    scrollTimer = window.setTimeout(update, 120);
-  }, { passive: true });
-  new ResizeObserver(update).observe(serviceCarousel);
-  controls.hidden = false;
-  update();
-}
+  const observer = new IntersectionObserver(entries => {
+    entries.filter(entry => entry.isIntersecting).forEach((entry, index) => {
+      reveal(entry.target, Math.min(index % 3, 2) * 85);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section-heading, .trust-grid > div, .service-card, .process-image-wrap, .process-content, .industry-grid > article, .testimonial-intro, .testimonial-carousel, .quote-copy, .quote-form, .service-hero-photo, .service-article > section, .service-enquiry, .service-related').forEach(element => observer.observe(element));
+  document.addEventListener('focusin', event => {
+    active.forEach((animation, element) => {
+      if (element.contains(event.target)) animation.cancel();
+    });
+  });
+  preference.addEventListener('change', () => {
+    if (preference.matches) active.forEach(animation => animation.cancel());
+  });
+})();
