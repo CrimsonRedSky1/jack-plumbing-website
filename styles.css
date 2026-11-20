@@ -166,9 +166,8 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
 .process-content h2 { margin-bottom: 22px; }
 .lead { max-width: 455px; margin-bottom: 35px; color: var(--slate); font-size: 17px; line-height: 1.6; }
 .process-list { margin: 0; padding: 0; list-style: none; }
-.process-list li { display: grid; grid-template-columns: 42px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid #c8dde2; }
+.process-list li { display: block; padding: 17px 0; border-top: 1px solid #c8dde2; }
 .process-list li:last-child { border-bottom: 1px solid #c8dde2; }
-.process-list span { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
 .process-list h3 { margin: 0 0 3px; font-size: 17px; letter-spacing: -.02em; }
 .process-list p { margin: 0; color: var(--slate); font-size: 14px; }
 
@@ -647,4 +646,19 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
 @media (prefers-reduced-motion: no-preference) {
  .service-card-photo img { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
  @media (hover: hover) and (pointer: fine) { .service-photo-card:hover .service-card-photo img { transform: scale(1.045); } }
+}
+
+/* Quiet grey plumbing illustrations only on light-blue section backgrounds. */
+.brands-section, .process-section, .quote-section {
+  background-image: url("assets/plumbing-pattern.svg");
+  background-repeat: repeat;
+  background-size: 216px 180px;
+}
+@media (max-width: 620px) {
+  .brands-section, .process-section, .quote-section {
+    background-size: 192px 160px;
+  }
+}
+@media print {
+  .brands-section, .process-section, .quote-section { background-image: none; }
 }
