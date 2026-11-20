@@ -138,11 +138,9 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
 .service-icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: auto; color: var(--blue); background: var(--sky); border-radius: 50%; }
 .service-card-featured .service-icon { color: var(--navy); background: var(--aqua); }
 .service-icon svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.service-number { position: absolute; top: 31px; right: 28px; margin: 0; color: #abc0c9; font-size: 12px; font-weight: 800; letter-spacing: .08em; }
-.service-card-featured .service-number { color: #a3e4e9; }
 .service-card h3 { margin: 27px 0 10px; }
-.service-card p:not(.service-number) { max-width: 290px; margin-bottom: 22px; color: var(--slate); font-size: 14px; line-height: 1.6; }
-.service-card-featured p:not(.service-number) { color: #c1e6ea; }
+.service-card p { max-width: 290px; margin-bottom: 22px; color: var(--slate); font-size: 14px; line-height: 1.6; }
+.service-card-featured p { color: #c1e6ea; }
 .service-card a { margin-top: auto; color: var(--blue); font-size: 14px; font-weight: 800; text-decoration: none; }
 .service-card-featured a { color: var(--aqua); }
 
