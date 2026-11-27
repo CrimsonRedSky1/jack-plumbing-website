@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300">
-  <g fill="none" stroke="#7d858b" stroke-opacity=".15" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#7d858b" stroke-opacity=".20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <!-- Tap -->
     <g transform="translate(24 28) rotate(-12 24 24)"><path d="M4 20h26a10 10 0 0 1 10 10v6h-9v-6H4zM15 20v-8h8v8M10 8h18M19 4v8M3 17v16M36 41s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></g>
     <!-- Valve wheel -->
