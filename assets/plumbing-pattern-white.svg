@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300">
+  <g fill="none" stroke="#ffffff" stroke-opacity=".12" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Tap -->
+    <g transform="translate(24 28) rotate(-12 24 24)"><path d="M4 20h26a10 10 0 0 1 10 10v6h-9v-6H4zM15 20v-8h8v8M10 8h18M19 4v8M3 17v16M36 41s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></g>
+    <!-- Valve wheel -->
+    <g transform="translate(140 24)"><circle cx="23" cy="21" r="16"/><circle cx="23" cy="21" r="4"/><path d="M23 5v12m0 8v12M7 21h12m8 0h12M23 37v10M7 47h32M7 42v10m32-10v10"/></g>
+    <!-- Pipe elbow -->
+    <g transform="translate(268 29) rotate(12 24 24)"><path d="M9 3v24a15 15 0 0 0 15 15h24V28H25a2 2 0 0 1-2-2V3ZM5 3h22v6H5ZM42 24h6v22h-6"/></g>
+    <!-- Droplet -->
+    <g transform="translate(86 105)"><path d="M15 0S2 17 2 25a13 13 0 0 0 26 0C28 17 15 0 15 0ZM8 25c0 5 3 8 7 8"/></g>
+    <!-- Pressure gauge -->
+    <g transform="translate(204 105)"><circle cx="21" cy="20" r="18"/><path d="M21 38v10M12 48h18M21 20l9-10M9 20h3m9-12v3m12 9h-3M13 30h16"/><circle cx="21" cy="20" r="2"/></g>
+    <!-- Pipe joint -->
+    <g transform="translate(22 211) rotate(-10 24 24)"><path d="M3 15h17V0h13v15h17v13H33v18H20V28H3ZM0 11h6v21H0ZM46 11h6v21h-6M16 40h21v6H16"/></g>
+    <!-- Shower head -->
+    <g transform="translate(143 213) rotate(12 24 24)"><path d="M7 47V14a11 11 0 0 1 22 0v5M18 25a11 7 0 0 1 22 0ZM20 32l-2 6m11-6v7m9-7 2 6M17 43l-1 5m13-4v5m12-6 1 5"/></g>
+    <!-- Spanner -->
+    <g transform="translate(270 210) rotate(25 22 22)"><path d="M13 3a13 13 0 0 0 1 23L8 47a5 5 0 0 0 10 3l6-23A13 13 0 0 0 31 5l-5 11-10-3Z"/><circle cx="13" cy="47" r="1.5"/></g>
+  </g>
+</svg>

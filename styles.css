@@ -662,3 +662,27 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400;
 @media print {
   .brands-section, .process-section, .quote-section { background-image: none; }
 }
+
+/* White plumbing pattern, scoped to service pages only. */
+.service-page .service-hero,
+.service-page .site-footer,
+.service-page .service-enquiry,
+.service-page .service-faq {
+  background-image: url("assets/plumbing-pattern-white.svg");
+  background-repeat: repeat;
+  background-size: 216px 180px;
+}
+.service-page .service-hero {
+  background-image: url("assets/plumbing-pattern-white.svg"), radial-gradient(ellipse at top right, #0b5165, var(--navy) 65%);
+  background-size: 216px 180px, cover;
+}
+.service-page img { border-radius: 10px; }
+.service-page .service-hero-photo { border-radius: 14px; }
+.service-page .service-hero-photo img { border-radius: 14px; }
+@media (max-width: 620px) {
+  .service-page .service-hero { background-size: 192px 160px, cover; }
+  .service-page .site-footer, .service-page .service-enquiry, .service-page .service-faq { background-size: 192px 160px; }
+}
+@media print {
+  .service-page .service-hero, .service-page .site-footer, .service-page .service-enquiry, .service-page .service-faq { background-image: none; }
+}
